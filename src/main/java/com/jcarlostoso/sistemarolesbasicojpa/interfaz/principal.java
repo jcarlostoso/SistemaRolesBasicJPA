@@ -8,12 +8,12 @@ package com.jcarlostoso.sistemarolesbasicojpa.interfaz;
  *
  * @author bynot
  */
-public class principal extends javax.swing.JFrame {
+public class Principal extends javax.swing.JFrame {
 
     /**
      * Creates new form principal
      */
-    public principal() {
+    public Principal() {
         initComponents();
     }
 

@@ -5,6 +5,8 @@
 
 package com.jcarlostoso.sistemarolesbasicojpa;
 
+import com.jcarlostoso.sistemarolesbasicojpa.interfaz.Principal;
+
 /**
  *
  * @author bynot
@@ -12,6 +14,8 @@ package com.jcarlostoso.sistemarolesbasicojpa;
 public class SistemaRolesBasicoJPA {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Principal principal = new Principal();
+        principal.setVisible(true);
+        principal.setLocationRelativeTo(null);
     }
 }
