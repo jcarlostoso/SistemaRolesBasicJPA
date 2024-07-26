@@ -4,16 +4,20 @@
  */
 package com.jcarlostoso.sistemarolesbasicojpa.interfaz;
 
+import com.jcarlostoso.sistemarolesbasicojpa.logica.ControladoraLogica;
+
 /**
  *
  * @author bynot
  */
 public class Principal extends javax.swing.JFrame {
-
+    
+    ControladoraLogica controladoralogica;
     /**
      * Creates new form principal
      */
     public Principal() {
+        controladoralogica = new ControladoraLogica();
         initComponents();
     }
 
