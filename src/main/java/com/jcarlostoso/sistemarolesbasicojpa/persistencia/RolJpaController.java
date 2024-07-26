@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -26,6 +27,11 @@ public class RolJpaController implements Serializable {
     public RolJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
+
+    public RolJpaController() {
+        emf = Persistence.createEntityManagerFactory("sistemaRolesPU");
+    }
+    
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {

@@ -15,6 +15,7 @@ import com.jcarlostoso.sistemarolesbasicojpa.persistencia.exceptions.Nonexistent
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -24,6 +25,9 @@ public class UsuarioJpaController implements Serializable {
 
     public UsuarioJpaController(EntityManagerFactory emf) {
         this.emf = emf;
+    }
+    public UsuarioJpaController() {
+        emf = Persistence.createEntityManagerFactory("sistemaRolesPU");
     }
     private EntityManagerFactory emf = null;
 
