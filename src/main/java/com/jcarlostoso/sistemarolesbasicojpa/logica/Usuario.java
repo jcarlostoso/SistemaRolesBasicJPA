@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -21,15 +22,28 @@ public class Usuario {
     private int id;
     private String nombreUsuario;
     private String contrasena;
+    @OneToOne
+    private Rol rol;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nombreUsuario, String contrasena) {
+    public Usuario(int id, String nombreUsuario, String contrasena, Rol rol) {
         this.id = id;
         this.nombreUsuario = nombreUsuario;
         this.contrasena = contrasena;
+        this.rol = rol;
     }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
+   
 
     public int getId() {
         return id;

@@ -4,10 +4,12 @@
  */
 package com.jcarlostoso.sistemarolesbasicojpa.logica;
 
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -20,15 +22,28 @@ public class Rol {
     private int id;
     private String nombreRol;
     private String descripcion;
+    @OneToMany
+    private List<Usuario> listaUsuarios;
 
     public Rol() {
     }
 
-    public Rol(int id, String nombreRol, String descripcion) {
+    public Rol(int id, String nombreRol, String descripcion, List<Usuario> listaUsuarios) {
         this.id = id;
         this.nombreRol = nombreRol;
         this.descripcion = descripcion;
+        this.listaUsuarios = listaUsuarios;
     }
+
+    public List<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+
+    public void setListaUsuarios(List<Usuario> listaUsuarios) {
+        this.listaUsuarios = listaUsuarios;
+    }
+
+    
 
     public int getId() {
         return id;
