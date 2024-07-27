@@ -5,6 +5,7 @@
 package com.jcarlostoso.sistemarolesbasicojpa.logica;
 
 import com.jcarlostoso.sistemarolesbasicojpa.persistencia.ControladoraPersistencia;
+import java.util.List;
 
 /**
  *
@@ -16,6 +17,13 @@ public class ControladoraLogica {
 
     public ControladoraLogica() {
         controlPersistencia = new ControladoraPersistencia();
+    }
+
+    public String validarUsuario(String usuario, String contra) {
+        String mensaje = "";
+        List <Usuario> listaUsuarios = controlPersistencia.traerUsuarios();
+        
+        return mensaje;
     }
     
 }

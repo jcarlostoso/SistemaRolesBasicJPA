@@ -151,7 +151,18 @@ public class LoginPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void btnInciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInciarActionPerformed
-        // TODO add your handling code here:
+        String usuario= txtUsuario.getText();
+        String contra = new String(txtContrasena.getPassword());
+       // String mensaje = controladoralogica.validarUsuario(usuario,contra);
+        
+        if(usuario.isEmpty() || contra.isEmpty()){
+
+        Notificacion notificacion = new Notificacion();
+        notificacion.setMensaje("El campo Usuario o contraseña estan vacios");
+        notificacion.setTipo("Error");
+        notificacion.setTitulo("Erro");
+        notificacion.notificacion();
+        }
     }//GEN-LAST:event_btnInciarActionPerformed
 
     /**

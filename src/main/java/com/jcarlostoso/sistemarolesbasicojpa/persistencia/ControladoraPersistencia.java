@@ -4,6 +4,9 @@
  */
 package com.jcarlostoso.sistemarolesbasicojpa.persistencia;
 
+import com.jcarlostoso.sistemarolesbasicojpa.logica.Usuario;
+import java.util.List;
+
 /**
  *
  * @author bynot
@@ -13,6 +16,10 @@ public class ControladoraPersistencia {
     
     UsuarioJpaController usuarioJPA= new UsuarioJpaController();
     RolJpaController rolJPA = new RolJpaController();
+
+    public List<Usuario> traerUsuarios() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }
