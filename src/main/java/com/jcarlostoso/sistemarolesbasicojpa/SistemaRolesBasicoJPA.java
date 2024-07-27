@@ -5,7 +5,7 @@
 
 package com.jcarlostoso.sistemarolesbasicojpa;
 
-import com.jcarlostoso.sistemarolesbasicojpa.interfaz.Principal;
+import com.jcarlostoso.sistemarolesbasicojpa.interfaz.LoginPrincipal;
 
 /**
  *
@@ -14,7 +14,7 @@ import com.jcarlostoso.sistemarolesbasicojpa.interfaz.Principal;
 public class SistemaRolesBasicoJPA {
 
     public static void main(String[] args) {
-        Principal principal = new Principal();
+        LoginPrincipal principal = new LoginPrincipal();
         principal.setVisible(true);
         principal.setLocationRelativeTo(null);
     }

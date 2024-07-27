@@ -10,13 +10,13 @@ import com.jcarlostoso.sistemarolesbasicojpa.logica.ControladoraLogica;
  *
  * @author bynot
  */
-public class Principal extends javax.swing.JFrame {
+public class LoginPrincipal extends javax.swing.JFrame {
     
     ControladoraLogica controladoralogica;
     /**
      * Creates new form principal
      */
-    public Principal() {
+    public LoginPrincipal() {
         controladoralogica = new ControladoraLogica();
         initComponents();
     }
