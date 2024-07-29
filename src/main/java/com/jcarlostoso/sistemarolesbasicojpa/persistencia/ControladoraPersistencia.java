@@ -18,7 +18,8 @@ public class ControladoraPersistencia {
     RolJpaController rolJPA = new RolJpaController();
 
     public List<Usuario> traerUsuarios() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return usuarioJPA.findUsuarioEntities();
+        
     }
     
     

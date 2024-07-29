@@ -5,6 +5,7 @@
 package com.jcarlostoso.sistemarolesbasicojpa.interfaz;
 
 import com.jcarlostoso.sistemarolesbasicojpa.logica.ControladoraLogica;
+import com.jcarlostoso.sistemarolesbasicojpa.logica.Usuario;
 
 /**
  *
@@ -157,11 +158,32 @@ public class LoginPrincipal extends javax.swing.JFrame {
         
         if(usuario.isEmpty() || contra.isEmpty()){
 
-        Notificacion notificacion = new Notificacion();
-        notificacion.setMensaje("El campo Usuario o contraseña estan vacios");
-        notificacion.setTipo("Error");
-        notificacion.setTitulo("Erro");
+        Notificacion notificacion = new Notificacion("El campo Usuario o contraseña estan vacios","Error","Notificacion");
         notificacion.notificacion();
+        }else{
+            Usuario respuesta = controladoralogica.validarUsuario(usuario,contra);
+            
+            if(respuesta == null){
+                Notificacion notificacion = new Notificacion("Usuario o Contrasena incorrectos","Error","Notificacion");
+                notificacion.notificacion();
+               }else{
+           
+                
+                String rol = respuesta.getRol().getNombreRol();
+                if(rol.equals("admin")){
+                    PrincipalAdmin formAdmin = new PrincipalAdmin(controladoralogica,respuesta);
+                    formAdmin.setVisible(true);
+                    formAdmin.setLocationRelativeTo(null);
+                    this.dispose();
+                }
+                 if(rol.equals("user")){
+                    PrincipalUser formUSer = new PrincipalUser(controladoralogica,respuesta);
+                    formUSer.setVisible(true);
+                    formUSer.setLocationRelativeTo(null);
+                    this.dispose();
+
+                }
+            }
         }
     }//GEN-LAST:event_btnInciarActionPerformed
 

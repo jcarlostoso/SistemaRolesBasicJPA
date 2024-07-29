@@ -1,0 +1,83 @@
+[33mcommit 5dc5047f55b637dff4027710cd1a78950349130b[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 23:54:49 2024 -0600
+
+    Se agrega validacion de textfield vacios en login
+
+[33mcommit 5e098229e5e04e87d0e285311f4858fc91612256[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 23:19:24 2024 -0600
+
+    Se crea la intefaz de Admin y user
+
+[33mcommit 7b2928360c27434a5e1736f626d16d90b45f04f0[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 22:47:04 2024 -0600
+
+    Se crea form para admin y user
+
+[33mcommit 7977921f658779a53961cdb3c434b6eaba61fbfa[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 22:44:48 2024 -0600
+
+    Se refatoriza el nombre de form principal a loginprinicpal
+
+[33mcommit e90c07c8fe9498747c6ffd3c4d9a7e1c8a12e17c[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 17:48:43 2024 -0600
+
+    Se corrogen  las relaciones entre clases
+
+[33mcommit e87b00a437d5c6abb014aa6fbcfc0c94ff85574f[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 16:44:22 2024 -0600
+
+    Se agrega constructor de los JPAController con la creacion del emf
+
+[33mcommit aa129f6e526157cdbfee2d94f591ba7c5012aa7b[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 16:38:04 2024 -0600
+
+    se crea los JPAController de las clases
+
+[33mcommit 4188a503cbfd677b5560f21c9667330df9cb20fb[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 16:36:46 2024 -0600
+
+    se agregan las relaciones entre Usuario y Rol
+
+[33mcommit 680dc9104148cadfe4e65810512e3df51aba053c[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 16:15:41 2024 -0600
+
+    se agregan las clases en al archivo persistence
+
+[33mcommit 22ce711ae673be1c48b3749ba80ec1de9131d579[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 16:13:28 2024 -0600
+
+    se modelan las classes con JPA
+
+[33mcommit 15ca66ec78410546e8612231e8b5e267435a4201[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 16:03:06 2024 -0600
+
+    se crea clase Usuario, Rol y persistencia, se agrega conexion y dependencias
+
+[33mcommit fc28de589f62c745d81785e96fa76d9b6dd3570f[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 15:40:12 2024 -0600
+
+    Se crea clase para las notificaicones
+
+[33mcommit 857ffa2788440e1da9d0b8c92bdcacea2319790e[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 15:15:09 2024 -0600
+
+    Se disena la pantalla de login
+
+[33mcommit b11f0e0d978288856c1b0b596b409d9403e42f08[m
+Author: @bynoter <jcarlostoso@gmail.com>
+Date:   Fri Jul 26 10:41:21 2024 -0600
+
+    inicializando proyecto

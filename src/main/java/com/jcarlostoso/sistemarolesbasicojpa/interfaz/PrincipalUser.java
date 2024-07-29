@@ -4,17 +4,25 @@
  */
 package com.jcarlostoso.sistemarolesbasicojpa.interfaz;
 
+import com.jcarlostoso.sistemarolesbasicojpa.logica.ControladoraLogica;
+import com.jcarlostoso.sistemarolesbasicojpa.logica.Usuario;
+
 /**
  *
  * @author bynot
  */
 public class PrincipalUser extends javax.swing.JFrame {
-
+ControladoraLogica controladoralogica;
+Usuario usuario;
     /**
      * Creates new form PrincipalUser
      */
-    public PrincipalUser() {
+    public PrincipalUser(ControladoraLogica controladoralogica,Usuario usuario) {
         initComponents();
+        this.controladoralogica=controladoralogica;
+        this.usuario =usuario;
+
+
     }
 
     /**
@@ -35,9 +43,14 @@ public class PrincipalUser extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombreUsuario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("SISTEMA CONTROL DE USUARIOS");
@@ -83,9 +96,9 @@ public class PrincipalUser extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\bynot\\Downloads\\persona 07x07.png")); // NOI18N
         jLabel2.setToolTipText("");
 
-        jTextField1.setEditable(false);
-        jTextField1.setText("jTextField1");
-        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        txtNombreUsuario.setEditable(false);
+        txtNombreUsuario.setText("jTextField1");
+        txtNombreUsuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -95,7 +108,7 @@ public class PrincipalUser extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                .addComponent(txtNombreUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -103,7 +116,7 @@ public class PrincipalUser extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -153,6 +166,10 @@ public class PrincipalUser extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        this.txtNombreUsuario.setText(usuario.getNombreUsuario());
+    }//GEN-LAST:event_formWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -168,6 +185,6 @@ public class PrincipalUser extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtNombreUsuario;
     // End of variables declaration//GEN-END:variables
 }

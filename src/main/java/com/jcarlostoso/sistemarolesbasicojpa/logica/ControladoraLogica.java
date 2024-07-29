@@ -19,11 +19,21 @@ public class ControladoraLogica {
         controlPersistencia = new ControladoraPersistencia();
     }
 
-    public String validarUsuario(String usuario, String contra) {
-        String mensaje = "";
-        List <Usuario> listaUsuarios = controlPersistencia.traerUsuarios();
+    public Usuario validarUsuario(String usuario, String contra) {
+        Usuario respuesta =null;
+            List <Usuario> listaUsuarios = controlPersistencia.traerUsuarios();
+            
+            for(Usuario usu : listaUsuarios){
+                
+                if(usu.getNombreUsuario().equals(usuario) && usu.getContrasena().equals(contra)){
+                    respuesta = usu;
+                    return respuesta;
+                }
+            }
         
-        return mensaje;
+        return respuesta;
     }
+
+   
     
 }
