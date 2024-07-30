@@ -6,6 +6,7 @@ package com.jcarlostoso.sistemarolesbasicojpa.interfaz;
 
 import com.jcarlostoso.sistemarolesbasicojpa.logica.ControladoraLogica;
 import com.jcarlostoso.sistemarolesbasicojpa.logica.Usuario;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -37,7 +38,7 @@ Usuario usuario;
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaUsuarios = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         btnRecargar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
@@ -55,7 +56,7 @@ Usuario usuario;
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("SISTEMA CONTROL DE USUARIOS");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -66,7 +67,7 @@ Usuario usuario;
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaUsuarios);
 
         btnRecargar.setText("Recargar");
 
@@ -173,6 +174,7 @@ Usuario usuario;
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         this.txtNombreUsuario.setText(usuario.getNombreUsuario());
+        cargarTabla();
     }//GEN-LAST:event_formWindowOpened
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -196,7 +198,22 @@ Usuario usuario;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaUsuarios;
     private javax.swing.JTextField txtNombreUsuario;
     // End of variables declaration//GEN-END:variables
+
+    private void cargarTabla() {
+        DefaultTableModel modelotabla = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int row, int cell){
+                return false;}
+        };
+        
+        
+        String titulos[] = {"Id", "Usuario","Rol"};
+        
+        modelotabla.setColumnIdentifiers(titulos);
+        tablaUsuarios.setModel(modelotabla);
+        
+    }
 }
