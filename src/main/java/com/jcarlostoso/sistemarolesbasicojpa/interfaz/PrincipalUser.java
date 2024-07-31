@@ -6,6 +6,7 @@ package com.jcarlostoso.sistemarolesbasicojpa.interfaz;
 
 import com.jcarlostoso.sistemarolesbasicojpa.logica.ControladoraLogica;
 import com.jcarlostoso.sistemarolesbasicojpa.logica.Usuario;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -213,6 +214,19 @@ Usuario usuario;
         String titulos[] = {"Id", "Usuario","Rol"};
         
         modelotabla.setColumnIdentifiers(titulos);
+        
+        //traer de la bd la lista de usuarios
+        List <Usuario> listaUsuarios = controladoralogica.traerUsuarios();
+        if(listaUsuarios !=null){
+            for(Usuario usu:listaUsuarios){
+                Object objeto []= {
+                    usu.getId(),
+                    usu.getNombreUsuario(),
+                    usu.getRol().getNombreRol()
+                };
+                modelotabla.addRow(objeto);
+            }
+        }
         tablaUsuarios.setModel(modelotabla);
         
     }

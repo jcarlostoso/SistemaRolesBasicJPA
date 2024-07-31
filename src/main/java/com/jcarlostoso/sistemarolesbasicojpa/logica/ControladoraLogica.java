@@ -34,6 +34,11 @@ public class ControladoraLogica {
         return respuesta;
     }
 
+    public List<Usuario> traerUsuarios() {
+        return  controlPersistencia.traerUsuarios();
+        
+    }
+
    
     
 }
