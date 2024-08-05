@@ -74,6 +74,11 @@ Usuario usuario;
         jScrollPane1.setViewportView(tablaUsuarios);
 
         btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
 
         btnActualizar.setText("Editar");
 
@@ -123,7 +128,6 @@ Usuario usuario;
                 .addContainerGap())
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\bynot\\Downloads\\persona 07x07.png")); // NOI18N
         jLabel2.setToolTipText("");
 
         txtNombreUsuario.setEditable(false);
@@ -211,6 +215,10 @@ Usuario usuario;
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
         cargarTabla();
     }//GEN-LAST:event_btnRecargarActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevoActionPerformed
 
     /**
      * @param args the command line arguments
