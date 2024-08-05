@@ -12,7 +12,7 @@ import java.util.List;
  * @author bynot
  */
 public class ControladoraLogica {
-    
+   
     ControladoraPersistencia controlPersistencia ;
 
     public ControladoraLogica() {
@@ -38,7 +38,41 @@ public class ControladoraLogica {
         return  controlPersistencia.traerUsuarios();
         
     }
+        
+    public List<Rol> traerRoles() {
+       return controlPersistencia.traerRoles();
+    }
 
-   
+    public void crearUsuario(String usuario, String contra, String rolRecibido) {
+        //crea una intacia de usuario
+        
+        Usuario usu = new Usuario();
+        usu.setNombreUsuario(usuario);
+        usu.setContrasena(contra);
+        
+        Rol  rolEncontrado = new Rol();
+        
+            rolEncontrado = this.traerRol(rolRecibido);
+        if(rolEncontrado !=null){   
+          usu.setRol(rolEncontrado);
+        }
+        
+        controlPersistencia.crearUsuario(usu);
+    }
+
+    private Rol traerRol(String rolRecibido) {
+            List <Rol> listaRoles = controlPersistencia.traerRoles();
+            for(Rol rol : listaRoles){
+                if(rol.getNombreRol().equals(rolRecibido)){
+                    return rol;
+                }
+            }
+            return null; 
+    }
+
+    public void borrarUsuario(int idUsuer) {
+
+        controlPersistencia.borrarUsuario(idUsuer);
+    }
     
 }

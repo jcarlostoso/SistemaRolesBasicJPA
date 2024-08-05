@@ -4,17 +4,24 @@
  */
 package com.jcarlostoso.sistemarolesbasicojpa.interfaz;
 
+import com.jcarlostoso.sistemarolesbasicojpa.logica.ControladoraLogica;
+import com.jcarlostoso.sistemarolesbasicojpa.logica.Rol;
+import java.util.List;
+
 /**
  *
  * @author bynot
  */
 public class AltaUsuario extends javax.swing.JFrame {
 
+    ControladoraLogica control;
     /**
      * Creates new form AltaUsuario
+     * @param control
      */
-    public AltaUsuario() {
+    public AltaUsuario(ControladoraLogica control) {
         initComponents();
+        this.control = control;
     }
 
     /**
@@ -38,6 +45,14 @@ public class AltaUsuario extends javax.swing.JFrame {
         btnGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("ALTA DE USUARIOS");
@@ -58,6 +73,11 @@ public class AltaUsuario extends javax.swing.JFrame {
         });
 
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -136,8 +156,39 @@ public class AltaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
+        String usuario = txtNombre.getText();
+        String contra = new String(txtContrasena.getPassword());
+        String rol =(String) cboxRol.getSelectedItem();
+        
+        control.crearUsuario(usuario,contra,rol);
+        Notificacion noti = new Notificacion("Se ha creado el usuario correctamente", "Info", "Notificacion");
+       
+         txtNombre.setText("");
+        txtContrasena.setText("");
+        cboxRol.setSelectedIndex(0);
+         noti.notificacion();
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        txtNombre.setText("");
+        txtContrasena.setText("");
+        cboxRol.setSelectedIndex(0);
+        
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        List <Rol> listaRoles = control.traerRoles();
+        
+        if(listaRoles !=null){
+            for(Rol rol :listaRoles){
+                cboxRol.addItem(rol.getNombreRol());
+            }
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

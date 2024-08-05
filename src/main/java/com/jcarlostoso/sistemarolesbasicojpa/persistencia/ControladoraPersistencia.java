@@ -4,8 +4,12 @@
  */
 package com.jcarlostoso.sistemarolesbasicojpa.persistencia;
 
+import com.jcarlostoso.sistemarolesbasicojpa.logica.Rol;
 import com.jcarlostoso.sistemarolesbasicojpa.logica.Usuario;
+import com.jcarlostoso.sistemarolesbasicojpa.persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,6 +25,24 @@ public class ControladoraPersistencia {
         return usuarioJPA.findUsuarioEntities();
         
     }
+
+    public List<Rol> traerRoles() {
+       
+        return rolJPA.findRolEntities();
+    }
+
     
-    
+
+    public void crearUsuario(Usuario usu) {
+        usuarioJPA.create(usu);
+    }
+
+    public void borrarUsuario(int idUsuer) {
+        try {
+            usuarioJPA.destroy(idUsuer);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+      
 }

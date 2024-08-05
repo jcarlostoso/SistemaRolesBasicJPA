@@ -83,6 +83,11 @@ Usuario usuario;
         btnActualizar.setText("Editar");
 
         btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
 
         btnRecargar.setText("Recargar");
         btnRecargar.addActionListener(new java.awt.event.ActionListener() {
@@ -217,8 +222,41 @@ Usuario usuario;
     }//GEN-LAST:event_btnRecargarActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
-        // TODO add your handling code here:
+        
+      AltaUsuario formAltaUsuario = new AltaUsuario(controladoralogica);
+      formAltaUsuario.setVisible(true);
+      formAltaUsuario.setLocationRelativeTo(null);
+      this.dispose();
     }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        Notificacion noti =new Notificacion() ;
+        if(tablaUsuarios.getRowCount() >0){
+            if(tablaUsuarios.getSelectedRow() !=-1){
+                int idUsuer = Integer.parseInt(String.valueOf(tablaUsuarios.getValueAt(tablaUsuarios.getSelectedRow(),0)));
+                
+                controladoralogica.borrarUsuario(idUsuer);
+                cargarTabla();
+                
+            noti.setMensaje("Usuario Eliminado con Exito");
+            noti.setTipo("Info");
+            noti.setTitulo("Notificacion");
+            noti.notificacion();
+            }else{
+               noti.setMensaje("No seleccionaste usuario para eliminar");
+            noti.setTipo("Error");
+            noti.setTitulo("Notificacion");
+            noti.notificacion(); 
+                
+        }
+        }else{
+            noti.setMensaje("No hay datos para eliminar");
+            noti.setTipo("Error");
+            noti.setTitulo("Notificacion");
+            noti.notificacion();
+        }
+        
+    }//GEN-LAST:event_btnBorrarActionPerformed
 
     /**
      * @param args the command line arguments

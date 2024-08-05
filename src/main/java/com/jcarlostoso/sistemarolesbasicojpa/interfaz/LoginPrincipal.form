@@ -58,7 +58,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnInciar" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnInciar" min="-2" pref="115" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -79,11 +79,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\bynot\Downloads\person_40dp_000000_FILL0_wght400_GRAD0_opsz40.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">
 
@@ -164,9 +159,6 @@
         </Container>
         <Component class="javax.swing.JToggleButton" name="btnInciar">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\bynot\Downloads\login_green 05x05.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="INICAR"/>
           </Properties>
           <Events>

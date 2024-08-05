@@ -42,8 +42,6 @@ public class LoginPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bynot\\Downloads\\person_40dp_000000_FILL0_wght400_GRAD0_opsz40.png")); // NOI18N
-
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Usuario:");
 
@@ -90,7 +88,6 @@ public class LoginPrincipal extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        btnInciar.setIcon(new javax.swing.ImageIcon("C:\\Users\\bynot\\Downloads\\login_green 05x05.png")); // NOI18N
         btnInciar.setText("INICAR");
         btnInciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +109,7 @@ public class LoginPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnInciar)
+                .addComponent(btnInciar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
